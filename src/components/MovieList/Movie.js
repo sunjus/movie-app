@@ -1,8 +1,9 @@
 import React from 'react';
+import { IMAGE_BASE_URL } from '../Views/Config'
 
-const Movie = () => (
+const Movie = ({ title, poster_path }) => (
         <div className="movie">
-            This is movie data.
+            <img src={IMAGE_BASE_URL + poster_path} alt={title} />
         </div>
 )
    

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const NavSearch = () => {
     return (
@@ -9,4 +9,4 @@ const NavSearch = () => {
         </div>
     )
 }
-export default NavSearch
+export default NavSearch;

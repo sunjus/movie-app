@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const NavMenu = () => {
     return (
@@ -10,4 +10,4 @@ const NavMenu = () => {
     )
 }
 
-export  default NavMenu
+export  default NavMenu;

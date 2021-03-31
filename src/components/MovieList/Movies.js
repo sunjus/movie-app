@@ -1,15 +1,27 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Movie from './Movie';
+import { API_URL } from '../Views//Config'
 
 function Movies() {
-    const movies = ["1","2","3"];
-    console.log(movies);
+    const [movies, setMovies] = useState([]);
 
-    return <div>
-        {movies.map(movie=>(
-            <Movie />
-        ))}           
-    </div>;
+
+    useEffect(() => {
+        fetch(API_URL)
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+                setMovies(data.results);
+            }); 
+    }, []);
+
+    return (
+        <div>
+            {movies.length > 0 &&
+                 movies.map((movie) => <Movie key={movie.id} {...movie}/>
+             )}           
+        </div>
+    );
     
 }
 
