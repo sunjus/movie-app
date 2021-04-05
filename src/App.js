@@ -1,7 +1,6 @@
 import React from 'react';
-import './App.scss';
-import NavMenu from './components/Header/NavMenu';
-import Movies from './components/MovieList/Movies';
+import NavMenu from './components/Header/header';
+import Movies from './components/MovieList/movieList';
 
 function App() {
 

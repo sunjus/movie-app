@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import  '../Views/Images/logo.png'
 
 const MainHeaderContainer = styled.div`
     height: 8rem;
