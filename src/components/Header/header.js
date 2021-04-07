@@ -1,4 +1,5 @@
 import React from 'react';
+import { SEARCH_URL, Popular } from "../Views/Config";
 import styled, { css } from 'styled-components';
 
 const MainHeaderContainer = styled.div`
@@ -11,33 +12,39 @@ const MainHeaderContainer = styled.div`
 
 const MainHeaderInnerContainer = styled.div`
     display: flex;
-    felx-direction: row;
     max-width: 1280px;
     width: 100%;
     height: 100%;
     justify-content: space-between;
     align-items: center;
-`;
-
-const HeaderLeft = styled.div`
-    font-size: 24px;  
-    font-weight: 400;
-    display: flex;
     text-transform: uppercase;
-    
+    font-size: 21px;    
+    vertical-align: middle;
 `;
 
-const Button = styled.a`
-    border: 1px solid black;
-    padding: 8px 16px;
-    margin-right: 10px;
-    border-radius: 30px;
-    text-align: center;
+const Logo = styled.h2`   
+    color: pink;
+    font-weight: 900;
+    margin-right: 20px;
+
+    @media (max-width: 1020px) {
+        font-size: 20px;
+    }
+    @media (max-width: 860px) {
+        font-size: 18px;
+    }
+`;
+
+const Link = styled.a`
+    font-size: 22px;
+    padding: 13px;
+    border-radius: 10px;
+    text-align: center;   
     text-decoration: none;
     background-color: ${props => props.dark ? 'grey' : 'white' };
     color: ${props => props.dark ? 'white' : 'black'};
     :after {
-        font-size: 25px;
+        font-size: 23px;
     }
     :hover {
         ${props => props.dark ? css`
@@ -48,11 +55,20 @@ const Button = styled.a`
         `}
     }
     cursor: pointer;
+
+    @media (max-width: 1020px) {
+        font-size: 18px;
+        padding: 10px;
+    }
+    @media (max-width: 860px) {
+        font-size: 16px;
+        padding: 8px;
+    }
 `;
 
 const HeaderRight = styled.div`
-    height: 48px;
-    width: 700px;
+    height: 45px;
+    width: 600px;
     text-decoration: none;
     display: flex;
     margin: 0;
@@ -70,26 +86,22 @@ const HeaderRight = styled.div`
         &::placeholder {
             color: grey;
         }
-    }
-    
-   
-    
+    }   
 `;
-
-
-
 
 const NavMenu = () => {
     return (
         <MainHeaderContainer>
             <MainHeaderInnerContainer>
-                <HeaderLeft>
-                   <Button dark>popular</Button>
-                   <Button href="https://github.com/sunjus/movie_list_app/" target="_blank" >github</Button> 
-                </HeaderLeft>
-                <HeaderRight>                                      
-                    <input placeholder="search for movie" type="text"  />                         
-                </HeaderRight>
+                    <Logo>BDMovie</Logo>
+                    <Link>latest</Link>
+                    <Link dark>popular</Link>
+                    <Link href="https://github.com/sunjus/movie_list_app/" target="_blank" >github</Link> 
+                    <HeaderRight>
+                        <input placeholder="search for movie" type="text"  />
+                    </HeaderRight>                               
+                                            
+               
             </MainHeaderInnerContainer>           
         </MainHeaderContainer>
     )
