@@ -20,6 +20,14 @@ const MainHeaderInnerContainer = styled.div`
     text-transform: uppercase;
     font-size: 21px;    
     vertical-align: middle;
+
+    @media (max-width: 375px) {
+        display: flex;
+        flex-direction: column;
+        height: 130px;
+        margin: auto;
+        padding: 10px;
+    }
 `;
 
 const Logo = styled.h2`   
@@ -27,11 +35,16 @@ const Logo = styled.h2`
     font-weight: 900;
     margin-right: 20px;
 
-    @media (max-width: 1020px) {
-        font-size: 20px;
+    @media (max-width: 1024px) {
+        font-size: 22px;
     }
-    @media (max-width: 860px) {
+    @media (max-width: 768px) {
+        font-size: 20px;
+        margin:0 0 0 10px;
+    }
+    @media (max-width: 540px) {   
         font-size: 18px;
+        
     }
 `;
 
@@ -56,13 +69,17 @@ const Link = styled.a`
     }
     cursor: pointer;
 
-    @media (max-width: 1020px) {
+    @media (max-width: 1024px) {
         font-size: 18px;
-        padding: 10px;
+        padding: 8px;
     }
-    @media (max-width: 860px) {
+    @media (max-width: 768px) {
         font-size: 16px;
         padding: 8px;
+    }
+    @media (max-width: 540px) {   
+        font-size: 14px;
+        padding: 6px;
     }
 `;
 
@@ -70,7 +87,6 @@ const HeaderRight = styled.div`
     height: 45px;
     width: 600px;
     text-decoration: none;
-    display: flex;
     margin: 0;
     padding: 0;
     
@@ -86,7 +102,29 @@ const HeaderRight = styled.div`
         &::placeholder {
             color: grey;
         }
-    }   
+
+        @media (max-width: 540px) {   
+           height: 30px;
+           font-size: 16px;
+        }
+    } 
+    
+    @media (max-width: 1024px) {   
+        width: 500px;
+        font-size: 18px;
+    }
+
+    @media (max-width: 768px) {   
+        width: 300px;
+        font-size: 15px;
+    }
+
+    @media (max-width: 540px) {   
+        width: 150px;
+        font-size: 12px;
+        height: 30px;
+        margin-right: 10px;
+    }
 `;
 
 const NavMenu = () => {
