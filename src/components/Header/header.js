@@ -15,10 +15,10 @@ const MainHeaderInnerContainer = styled.div`
     max-width: 1280px;
     width: 100%;
     height: 100%;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     text-transform: uppercase;
-    font-size: 21px;    
+    font-size: 23px;    
     vertical-align: middle;
 
     @media (max-width: 375px) {
@@ -33,7 +33,7 @@ const MainHeaderInnerContainer = styled.div`
 const Logo = styled.h2`   
     color: pink;
     font-weight: 900;
-    margin-right: 20px;
+    margin-right: 8px;
 
     @media (max-width: 1024px) {
         font-size: 22px;
@@ -43,15 +43,14 @@ const Logo = styled.h2`
         margin:0 0 0 10px;
     }
     @media (max-width: 540px) {   
-        font-size: 18px;
-        
+        font-size: 18px;    
     }
 `;
 
 const Link = styled.a`
     font-size: 22px;
-    padding: 13px;
-    border-radius: 10px;
+    padding: 11px;
+    border-radius: 5px;
     text-align: center;   
     text-decoration: none;
     background-color: ${props => props.dark ? 'grey' : 'white' };
@@ -71,7 +70,7 @@ const Link = styled.a`
 
     @media (max-width: 1024px) {
         font-size: 18px;
-        padding: 8px;
+        padding: 9px;
     }
     @media (max-width: 768px) {
         font-size: 16px;

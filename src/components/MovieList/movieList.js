@@ -11,8 +11,10 @@ const MovieCard = styled.div`
 
   > img {
     width: 100%;
-    height: 95%;
-    object-fit: cover;
+    max-width: 240px;
+    height: 360px;
+    margin: 12px;
+    object-fit: hidden;
   }
 `;
 
@@ -23,7 +25,7 @@ const MovieCardContainer = styled.div`
   flex-wrap: wrap;
 
   > div {
-    width: calc(33% - 1.065rem);
+    width: calc(19% - 1.065rem);
     margin: 0 auto;
     margin-bottom: 1rem;
 
