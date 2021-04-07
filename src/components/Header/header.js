@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 
 const MainHeaderContainer = styled.div`
-    height: 8rem;
+    height: 100px;
     min-height: calc(8vh - 8px);
     display: flex;   
     justify-content: center;
@@ -11,31 +11,33 @@ const MainHeaderContainer = styled.div`
 
 const MainHeaderInnerContainer = styled.div`
     display: flex;
-    flex-direction: row;
-    max-width: 1200px;
+    felx-direction: row;
+    max-width: 1280px;
     width: 100%;
     height: 100%;
     justify-content: space-between;
     align-items: center;
-    padding: 0 2rem;
 `;
 
 const HeaderLeft = styled.div`
-    font-size: 1.6rem;  
+    font-size: 24px;  
     font-weight: 400;
-    display: flex;    
+    display: flex;
+    text-transform: uppercase;
+    
 `;
 
-const Button = styled.div`
+const Button = styled.a`
     border: 1px solid black;
     padding: 8px 16px;
-    margin-right: 5px;
+    margin-right: 10px;
     border-radius: 30px;
     text-align: center;
+    text-decoration: none;
     background-color: ${props => props.dark ? 'grey' : 'white' };
     color: ${props => props.dark ? 'white' : 'black'};
     :after {
-        font-size: 1.8rem;
+        font-size: 25px;
     }
     :hover {
         ${props => props.dark ? css`
@@ -49,21 +51,44 @@ const Button = styled.div`
 `;
 
 const HeaderRight = styled.div`
-    font-size: 1.2rem;  
+    height: 48px;
+    width: 700px;
+    text-decoration: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    
+    > input {
+        height: 43px;
+        width: 100%;
+        padding: 0 24px;
+        border: none;
+        border-radius: 30px; 
+        font-size: 21px;
+        outline: none;
+        color: black;
+        &::placeholder {
+            color: grey;
+        }
+    }
+    
+   
+    
 `;
+
+
+
 
 const NavMenu = () => {
     return (
         <MainHeaderContainer>
             <MainHeaderInnerContainer>
                 <HeaderLeft>
-                   <Button dark>favorite</Button>
-                   <Button>github</Button> 
+                   <Button dark>popular</Button>
+                   <Button href="https://github.com/sunjus/movie_list_app/" target="_blank" >github</Button> 
                 </HeaderLeft>
-                <HeaderRight>
-                    <form className="nav-search">
-                        <input className="serach" type="text" placeholder="search..."></input>
-                    </form>
+                <HeaderRight>                                      
+                    <input placeholder="search for movie" type="text"  />                         
                 </HeaderRight>
             </MainHeaderInnerContainer>           
         </MainHeaderContainer>
