@@ -5,27 +5,26 @@ import styled from "styled-components";
 const MovieCard = styled.div`
   display: flex;
   flex-direction: column;
-  min-height: 20rem;
-  border-radius: 8px;
+  align-items: center;
+  border-radius: 5px;
   box-shadow: 0px 0px 10px 0px #aaa;
 
   > img {
     width: 100%;
-    max-width: 240px;
-    height: 360px;
-    margin: 12px;
-    object-fit: hidden;
+    height: 95%;
+    object-fit: cover;
   }
 `;
 
 const MovieCardContainer = styled.div`
   display: flex;
-  justify-content: flex-start;
-  margin: 0 -0.5rem;
+  justify-content: center;
+  margin: 0 auto;
   flex-wrap: wrap;
+  max-width: 1280px;
 
   > div {
-    width: calc(19% - 1.065rem);
+    width: calc(33% - 1.065rem);
     margin: 0 auto;
     margin-bottom: 1rem;
 
