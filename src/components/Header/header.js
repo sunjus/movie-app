@@ -1,5 +1,4 @@
 import React from 'react';
-import { SEARCH_URL, Popular } from "../Views/Config";
 import styled, { css } from 'styled-components';
 
 const MainHeaderContainer = styled.div`
