@@ -9,14 +9,16 @@ const Movie = ({ title, poster_path }) => (
   </MovieCard>
 );
 
-function Movies() {
+const Movies = () => {
   const [movies, setMovies] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchMovies = async () => {
       const result = await axios(API_URL);
       console.log(result);
       setMovies(result.data.results);
+      setIsLoading(false);
     };
     fetchMovies();
   }, []);
@@ -32,11 +34,14 @@ function Movies() {
 */
   return (
     <MovieCardContainer>
-      {movies.length > 0 &&
-        movies.map((movieItem) => <Movie key={movieItem.id} {...movieItem} />)}
+      {isLoading ? (
+        <h1>Loading...</h1>
+      ) : (
+        movies.map((movieItem) => <Movie key={movieItem.id} {...movieItem} />)
+      )}
     </MovieCardContainer>
   );
-}
+};
 
 const MovieCard = styled.div`
   display: flex;
