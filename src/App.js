@@ -1,6 +1,5 @@
-import { NavLink, Link } from "react-router-dom";
-import NavMenu from "./components/Header/header";
-import Movies from "./components/MovieList/movieList";
+import NavMenu from "./components/Header/Header";
+import Movies from "./components/MovieList/MovieList";
 
 function App() {
   return (

@@ -1,5 +1,5 @@
-import { useState } from "react";
 import styled, { css } from "styled-components";
+import Search from "./Search";
 
 const MainHeaderContainer = styled.div`
   height: 100px;
@@ -123,9 +123,12 @@ const NavMenu = () => {
         <Logo>BDMovie</Logo>
         <Link>latest</Link>
         <Link dark>popular</Link>
-        <Link href="https://github.com/sunjus/movie_list_app/" target="_blank">
-          github
+        <Link>
+          <a href="https://github.com/sunjus/movie_list_app/" target="_blank">
+            github
+          </a>
         </Link>
+        <Search />
       </MainHeaderInnerContainer>
     </MainHeaderContainer>
   );

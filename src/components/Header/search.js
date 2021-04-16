@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import React from "react";
 
 const SearchBar = styled.div`
     height: 45px;
@@ -22,7 +23,7 @@ const SearchBar = styled.div`
         }    
 `;
 
-const search = () => {
+const Search = () => {
   return (
     <SearchBar>
       <input placeholder="Search for a movie.." type="text" />
@@ -30,4 +31,4 @@ const search = () => {
   );
 };
 
-export default search;
+export default Search;
