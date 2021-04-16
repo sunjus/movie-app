@@ -1,6 +1,42 @@
 import React, { useState, useEffect } from "react";
 import { API_URL, IMAGE_BASE_URL } from "../Views/Config";
 import styled from "styled-components";
+import axios from "axios";
+
+const Movie = ({ title, poster_path }) => (
+  <MovieCard className="movie">
+    <img src={IMAGE_BASE_URL + poster_path} alt={title} />
+  </MovieCard>
+);
+
+function Movies() {
+  const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+    const fetchMovies = async () => {
+      const result = await axios(API_URL);
+      console.log(result);
+      setMovies(result.data.results);
+    };
+    fetchMovies();
+  }, []);
+  /*
+  useEffect(() => {
+    fetch(API_URL)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setMovies(data.results);
+      });
+  }, []);
+*/
+  return (
+    <MovieCardContainer>
+      {movies.length > 0 &&
+        movies.map((movieItem) => <Movie key={movieItem.id} {...movieItem} />)}
+    </MovieCardContainer>
+  );
+}
 
 const MovieCard = styled.div`
   display: flex;
@@ -37,31 +73,5 @@ const MovieCardContainer = styled.div`
     }
   }
 `;
-
-const Movie = ({ title, poster_path }) => (
-  <MovieCard className="movie">
-    <img src={IMAGE_BASE_URL + poster_path} alt={title} />
-  </MovieCard>
-);
-
-function Movies() {
-  const [movies, setMovies] = useState([]);
-
-  useEffect(() => {
-    fetch(API_URL)
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        setMovies(data.results);
-      });
-  }, []);
-
-  return (
-    <MovieCardContainer>
-      {movies.length > 0 &&
-        movies.map((movieItem) => <Movie key={movieItem.id} {...movieItem} />)}
-    </MovieCardContainer>
-  );
-}
 
 export default Movies;
