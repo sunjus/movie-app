@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
-import { API_URL, IMAGE_BASE_URL } from "../Views/Config";
-import styled from "styled-components";
+import { useState, useEffect } from "react";
 import axios from "axios";
+import { API_URL, IMAGE_BASE_URL } from "../views/Config";
+import styled from "styled-components";
 
 const Movie = ({ title, poster_path }) => (
-  <MovieCard className="movie">
-    <img src={IMAGE_BASE_URL + poster_path} alt={title} />
+  <MovieCard>
+    <img src={IMAGE_BASE_URL + poster_path} alt="title" />
   </MovieCard>
 );
 
@@ -22,6 +22,7 @@ const Movies = () => {
     };
     fetchMovies();
   }, []);
+
   /*
   useEffect(() => {
     fetch(API_URL)

@@ -1,13 +1,16 @@
-import NavMenu from "./components/Header/Header";
-import Movies from "./components/MovieList/MovieList";
+import React from "react";
+import Header from "./components/header/Header";
+import Search from "./components/header/Search";
+import Movies from "./components/movieList/Movies";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <NavMenu />
+    <div className="container">
+      <Header />
+      <Search />
       <Movies />
     </div>
   );
-}
+};
 
 export default App;

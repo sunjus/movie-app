@@ -1,5 +1,19 @@
 import styled, { css } from "styled-components";
-import Search from "./Search";
+
+const Header = () => {
+  return (
+    <MainHeaderContainer>
+      <MainHeaderInnerContainer>
+        <Logo>🎥DBMovie</Logo>
+        <Link>latest</Link>
+        <Link dark>popular</Link>
+        <Link>
+          <a href="https://github.com/sunjus/movie_list_app/">github</a>
+        </Link>
+      </MainHeaderInnerContainer>
+    </MainHeaderContainer>
+  );
+};
 
 const MainHeaderContainer = styled.div`
   height: 100px;
@@ -70,6 +84,10 @@ const Link = styled.a`
   }
   cursor: pointer;
 
+  > a {
+    text-decoration: none;
+  }
+
   @media (max-width: 1024px) {
     font-size: 18px;
     padding: 9px;
@@ -84,54 +102,4 @@ const Link = styled.a`
   }
 `;
 
-const HeaderRight = styled.div`
-  height: 45px;
-  width: 600px;
-  text-decoration: none;
-  margin: 0;
-  padding: 0;
-  display: block;
-
-    @media (max-width: 540px) {
-      height: 30px;
-      font-size: 16px;
-    }
-  }
-
-  @media (max-width: 1024px) {
-    width: 500px;
-    font-size: 18px;
-  }
-
-  @media (max-width: 768px) {
-    width: 300px;
-    font-size: 15px;
-  }
-
-  @media (max-width: 540px) {
-    width: 150px;
-    font-size: 12px;
-    height: 30px;
-    margin-right: 10px;
-  }
-`;
-
-const NavMenu = () => {
-  return (
-    <MainHeaderContainer>
-      <MainHeaderInnerContainer>
-        <Logo>BDMovie</Logo>
-        <Link>latest</Link>
-        <Link dark>popular</Link>
-        <Link>
-          <a href="https://github.com/sunjus/movie_list_app/" target="_blank">
-            github
-          </a>
-        </Link>
-        <Search />
-      </MainHeaderInnerContainer>
-    </MainHeaderContainer>
-  );
-};
-
-export default NavMenu;
+export default Header;
