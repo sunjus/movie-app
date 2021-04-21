@@ -1,15 +1,12 @@
 import React from "react";
-import Header from "./components/header/Header";
-import Search from "./components/header/Search";
-import Movies from "./components/movieList/Movies";
+import { MovieState } from "./context/MovieContext";
+import Hero from "./components/hero/Hero";
 
 const App = () => {
   return (
-    <div className="container">
-      <Header />
-      <Search />
-      <Movies />
-    </div>
+    <MovieState>
+      <Hero />
+    </MovieState>
   );
 };
 
