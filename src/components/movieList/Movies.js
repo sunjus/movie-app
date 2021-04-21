@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
-import { API_URL, IMAGE_BASE_URL } from "../views/Config";
+import { useContext } from "react";
+import { MovieContext } from "../../context/MovieContext";
+import { IMAGE_BASE_URL } from "../views/Config";
 import styled from "styled-components";
 
 const Movie = ({ title, poster_path }) => (
@@ -10,36 +10,13 @@ const Movie = ({ title, poster_path }) => (
 );
 
 const Movies = () => {
-  const [movies, setMovies] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const { movies, isLoading } = useContext(MovieContext);
 
-  useEffect(() => {
-    const fetchMovies = async () => {
-      const result = await axios(API_URL);
-      console.log(result);
-      setMovies(result.data.results);
-      setIsLoading(false);
-    };
-    fetchMovies();
-  }, []);
-
-  /*
-  useEffect(() => {
-    fetch(API_URL)
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        setMovies(data.results);
-      });
-  }, []);
-*/
   return (
     <MovieCardContainer>
-      {isLoading ? (
-        <h1>Loading...</h1>
-      ) : (
-        movies.map((movieItem) => <Movie key={movieItem.id} {...movieItem} />)
-      )}
+      {movies.map((movieItem) => (
+        <Movie key={movieItem.id} {...movieItem} />
+      ))}
     </MovieCardContainer>
   );
 };
@@ -50,18 +27,21 @@ const MovieCard = styled.div`
   align-items: center;
   border-radius: 5px;
   box-shadow: 0px 0px 10px 0px #aaa;
+  max-width: 240px;
 
   > img {
     width: 100%;
+    max-width: 240px;
     height: 95%;
     object-fit: cover;
+    marginL 10px 0;
   }
 `;
 
 const MovieCardContainer = styled.div`
   display: flex;
   justify-content: center;
-  margin: 0 auto;
+  margin: 20px auto;
   flex-wrap: wrap;
   max-width: 1280px;
 
