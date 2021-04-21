@@ -14,9 +14,11 @@ const Movies = () => {
 
   return (
     <MovieCardContainer>
-      {movies.map((movieItem) => (
-        <Movie key={movieItem.id} {...movieItem} />
-      ))}
+      {isLoading ? (
+        <h1>Loading...</h1>
+      ) : (
+        movies.map((movieItem) => <Movie key={movieItem.id} {...movieItem} />)
+      )}
     </MovieCardContainer>
   );
 };
