@@ -1,13 +1,16 @@
 import { useContext } from "react";
 import { MovieContext } from "../../context/MovieContext";
-import { IMAGE_BASE_URL } from "../views/Config";
 import styled from "styled-components";
 
-const Movie = ({ title, poster_path }) => (
-  <MovieCard>
-    <img src={IMAGE_BASE_URL + poster_path} alt="title" />
-  </MovieCard>
-);
+const Movie = ({ title, poster_path }) => {
+  const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w300";
+
+  return (
+    <MovieCard>
+      <img src={IMAGE_BASE_URL + poster_path} alt="title" />
+    </MovieCard>
+  );
+};
 
 const Movies = () => {
   const { movies, isLoading } = useContext(MovieContext);
