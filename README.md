@@ -2,7 +2,7 @@
 
 
 ## DESCRIPTION
-This is a _movieList_ app built in ReactJS. It's built using [TMDB's API](https://www.themoviedb.org/documentation/api/) to display data.
+This is a _movieList_ app built in ReactJS. It's built using [TMDB's API](https://www.themoviedb.org/documentation/api/) to display data. It's continually being developed.
 
 ## INSTALLATION
 
