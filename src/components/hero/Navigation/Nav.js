@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import NavMain from "./NavMain";
 import NavMenu from "./NavMenu";
 import NavSearch from "./NavSearch";
 import styled from "styled-components";
+import { MovieContext } from "../../../context/MovieContext";
 
 const Nav = () => {
+  const { hiddenMenu, setHiddenMenu } = useContext(MovieContext);
   return (
     <NavBar>
       <div className="container">
@@ -13,7 +15,11 @@ const Nav = () => {
           <NavMenu />
         </div>
         <NavSearch />
-        <i id="burgerMenu" className="fas fa-bars"></i>
+        <i
+          id="burgerMenu"
+          className={hiddenMenu ? "fas fa-bars" : "fas fa-times"}
+          onClick={() => setHiddenMenu(!hiddenMenu)}
+        ></i>
       </div>
     </NavBar>
   );

@@ -9,3 +9,9 @@ export const Top_rated = `https://api.themoviedb.org/3/movie/top_rated?api_key=$
 export const Popular = `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`;
 
 export const Latest = `https://api.themoviedb.org/3/movie/latest?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`;
+
+REACT_APP_API_KEY = 0065d0c91554803d55345617612ad0b7;
+
+module.exports = {
+    monURI: process.env.REACT_APP_API_KEY,
+  };

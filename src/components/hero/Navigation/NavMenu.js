@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import NavLink from "./NavLink";
 import styled from "styled-components";
+import { MovieContext } from "../../../context/MovieContext";
 
 const NavMenu = () => {
+  const { hiddenMenu } = useContext(MovieContext);
   return (
-    <Menu>
-      <NavLink link="LATEST" />
-      <NavLink link="POPULAR" />
+    <Menu className={(hiddenMenu ? "hidden" : "") + "heroNav"}>
+      <NavLink link="Top-rated" />
       <NavLink link="GITHUB" />
     </Menu>
   );

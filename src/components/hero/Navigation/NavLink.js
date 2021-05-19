@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
+import { MovieContext } from "../../../context/MovieContext";
 
 const NavLink = ({ link }) => {
+  const { setActiveLink, setHiddenMenu } = useContext(MovieContext);
   return (
     <Link>
-      <button>{link}</button>
+      <button
+        onClick={() => {
+          setActiveLink(Link);
+          setHiddenMenu(true);
+        }}
+      >
+        {link}
+      </button>
     </Link>
   );
 };

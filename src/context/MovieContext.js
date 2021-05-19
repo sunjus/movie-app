@@ -1,4 +1,4 @@
-import React, { useState, useEffect, createContext } from "react";
+import { useState, useEffect, createContext } from "react";
 import axios from "axios";
 
 export const MovieContext = createContext();
@@ -6,9 +6,21 @@ export const MovieContext = createContext();
 export const MovieState = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [movies, setMovies] = useState([]);
+  const [top, setTop] = useState([]);
   const [search, setSearch] = useState("");
+  const [hiddenMenu, setHiddenMenu] = useState(true);
+  const [activeLink, setActiveLink] = useState("Popular");
 
   const API_URL = `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`;
+  const TOP_URL = `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`;
+
+  const getTop = async () => {
+    const res = await axios(TOP_URL);
+    console.log(res);
+    console.log(res.data.results);
+
+    setTop(res.data.results);
+  };
 
   const getMovies = async () => {
     const result = await axios(API_URL);
@@ -33,6 +45,10 @@ export const MovieState = ({ children }) => {
   };
 
   useEffect(() => {
+    getTop();
+  }, []);
+
+  useEffect(() => {
     getMovies();
   }, [search]);
 
@@ -43,9 +59,15 @@ export const MovieState = ({ children }) => {
         setIsLoading,
         movies,
         setMovies,
+        top,
+        setTop,
         search,
         setSearch,
         handleSearch,
+        hiddenMenu,
+        setHiddenMenu,
+        activeLink,
+        setActiveLink,
       }}
     >
       {children}
