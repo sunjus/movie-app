@@ -1,24 +1,23 @@
 ## Movie List App with REACT
 
 
-## DESCRIPTION
+### DESCRIPTION
 This is a _movieList_ app built in ReactJS. It's built using [TMDB's API](https://www.themoviedb.org/documentation/api/) to display data. It's continually being developed.
 
-## INSTALLATION
+### INSTALLATION
 
      -Clone the repository git clone https://github.com/sunjus/movie-app.git
-     -Navigate into the directory cd movie_list_app
+     -Navigate into the directory cd movie-app
      -Install dependencies yarn
      -Start the project with yarn run start
 
-## 🚩[LIVE DEMO](https://movie-wonderful.netlify.app/)
+### 🚩[LIVE DEMO](https://movie-wonderful.netlify.app/)
 
 
-## FEATURES
+### FEATURES
 
-## TECHNICAL NOTES
+### TECHNICAL NOTES
      -react
      -typescript
      -styled-components
 
-## BROWSER SUPPORT
