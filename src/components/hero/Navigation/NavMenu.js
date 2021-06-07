@@ -7,8 +7,7 @@ const NavMenu = () => {
   const { hiddenMenu } = useContext(MovieContext);
   return (
     <Menu className={(hiddenMenu ? "hidden" : "") + "heroNav"}>
-      <NavLink link="Top-rated" />
-      <NavLink link="GITHUB" />
+      
     </Menu>
   );
 };
